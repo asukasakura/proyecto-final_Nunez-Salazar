@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/helpers.css">
+    <link rel="stylesheet" href="assets/css/spacing-helpers.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+      <a href="index.html" class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_back_ios_new</i></a>
+      
+        <div class="row">
+          <div class="col m8 push-m2 s12 center-align">
+            
+            <img src="assets/images/logo-beany.png" alt="Beany | Skin care" class="responsive-img margin top-20 bottom-20" width="150">
+            
+            <form action="" id="add_products">
+              <div class="row">
+                
+                <div class="input-field col s12">
+                  <input value="" id="nombre_producto" type="text" class="validate">
+                  <label class="active" for="nombre_producto">Nombre producto</label>
+                </div>
+    
+                <div class="input-field col s12">
+                  <select id="categoria">
+                    <option value="" disabled selected>--</option>
+                    <option value="Limpiador">Limpiador</option>
+                    <option value="Crema día">Crema día</option>
+                    <option value="Crema noche">Crema noche</option>
+                    <option value="Tónico">Tónico</option>
+                    <option value="Serum">Serum</option>
+                    <option value="Loción">Loción</option>
+                    <option value="solar">Protector solar</option>
+                    <option value="Mascarilla">Mascarilla</option>
+                    <option value="Pelling">Pelling</option>
+                  </select>
+                  <label>Categoría de producto</label>
+                </div>
+    
+                <div class="input-field col s12">
+                  <select id="marca">
+                    <option value="" disabled selected>--</option>
+                    <option value="Tony Moly">Tony Moly</option>
+                    <option value="Innisfree">Innisfree</option>
+                    <option value="Klairs ">Klairs </option>
+                    <option value="Missha">Missha</option>
+                    <option value="COSRX">COSRX</option>
+                    <option value="Belif">Belif</option>
+                    <option value="Laneige">Laneige</option>
+                    <option value="Etude House">Etude House</option>
+                    <option value="Mediheal">Mediheal</option>
+                    <option value="The Face Shop">The Face Shop</option>
+                    <option value="Sulwhasoo">Sulwhasoo</option>
+                  </select>
+                  <label>Marca</label>
+                </div>
+    
+                <div class="input-field col s12">
+                  <input type="text" class="datepicker" id="fecha_caducidad">
+                  <label class="active" for="fecha_caducidad">Fecha Caducidad</label>
+                </div>
+                
+                <div class="input-field col s12">
+                  <p>¿El producto está abierto?</p>
+                  <p>
+                    <label>
+                      <input name="estado_apertura" type="radio" class="with-gap estado_apertura" value="true"/>
+                      <span>Si</span>
+                    </label>                    
+                    <label>
+                      <input name="estado_apertura" type="radio" class="with-gap estado_apertura" value="false" checked/>
+                      <span>No</span>
+                    </label>
+                  </p>
+                </div>
+
+                <div class="input-field col s12 isClose" id="checkOpen">
+                  <input type="text" class="datepicker" id="fecha_apertura">
+                  <label class="active" for="fecha_apertura">Fecha Apertura</label>
+                </div>
+    
+                <div class="input-field col s12">
+                  <select id="pao">
+                    <option value="" disabled selected>--</option>
+                    <option value="1">1 mes</option>
+                    <option value="3">3 meses</option>
+                    <option value="6">6 meses</option>
+                    <option value="12">12 meses</option>
+                    <option value="18">18 meses</option>
+                    <option value="24">24 meses</option>
+                  </select>
+                  <label>PAO (Period After Opening)</label>
+                </div>
+    
+                <div class="input-field col s12">
+                  <p>Clasificación</p>
+                  <p class="clasificacion">
+                    <input id="radio1" type="radio" name="estrellas" class="estrellas" value="5"><!--
+                    --><label for="radio1">★</label><!--
+                    --><input id="radio2" type="radio" name="estrellas" class="estrellas" value="4"><!--
+                    --><label for="radio2">★</label><!--
+                    --><input id="radio3" type="radio" name="estrellas" class="estrellas" value="3"><!--
+                    --><label for="radio3">★</label><!--
+                    --><input id="radio4" type="radio" name="estrellas" class="estrellas" value="2"><!--
+                    --><label for="radio4">★</label><!--
+                    --><input id="radio5" type="radio" name="estrellas" class="estrellas" value="1"><!--
+                    --><label for="radio5">★</label>
+                  </p>
+                </div>
+                <div class="input-field col s12">
+                  <textarea id="notas" class="materialize-textarea"></textarea>
+                  <label for="notas">Notas</label>
+                </div>
+    
+                <div class="input-field col s12">
+                  <button class="btn waves-effect waves-light red lighten-2 btn-large" type="submit" name="action" id="guardar">Guardar
+                    <i class="material-icons right">data_saver_on</i>
+                  </button>
+                </div>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+      <script src="assets/js/materialize_comps.js"></script>
+      <script src="assets/js/add_products.js"></script>
+</body>
+</html>

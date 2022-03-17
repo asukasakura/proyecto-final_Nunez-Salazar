@@ -1,0 +1,51 @@
+.h-100 {
+  height: 100vh;
+}
+.h-50 {
+  height: 50vh;
+}
+.w-100 {
+  width: 100% !important;
+}
+.link-card {
+  height: calc(50vh - 2rem);
+}
+.link-card > a {
+  color: white;
+}
+.link-card span.large {
+  font-size: 4.4rem;
+}
+.link-card .card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.isClose {
+  display: none;
+}
+.isOpen {
+  display: block;
+}
+
+.clasificacion label {
+  color: grey;
+  font-size: 1.5rem;
+}
+.clasificacion label:hover {
+  color: #E57373;
+}
+.clasificacion label:hover ~ label {
+  color: #E57373;
+}
+.clasificacion input[type="radio"] {
+  display: none;
+}
+.clasificacion input[type="radio"]:checked ~ label {
+  color: #E57373;
+}
+.clasificacion {
+  direction: rtl; /* right to left */
+  unicode-bidi: bidi-override; /* bidi de bidireccional */
+}
