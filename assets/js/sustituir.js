@@ -3,7 +3,7 @@ import { pao, dateInPast, renderProductos, ProductoStoraged } from './funcitions
 let container = document.querySelector("#cards");
 let fechaActual = new Date();
 
-const alamacenados = JSON.parse(localStorage.getItem('productos'));
+const alamacenados = JSON.parse(localStorage.getItem('productos')) || [];
 alamacenados.reverse();
 const productosNews = []
 

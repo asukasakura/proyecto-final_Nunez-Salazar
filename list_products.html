@@ -25,10 +25,36 @@
                 <a href="add_product.html" title="Nuevo producto" class="btn-floating btn-large waves-effect waves-light right"><i class="material-icons">add</i></a>
             </div>
         </div>
-        <div class="row">
+        <div class="row center-align">
             <div id="cards"> </div>
+                
+            <div class="preloader-wrapper big active hide">
+                <div class="spinner-layer spinner-pink">
+                    <div class="circle-clipper left">
+                    <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <div id="modal1" class="modal">
+        <div class="modal-content center-align">
+            <i class="large material-icons">travel_explore</i>
+            <p class='center-align'>Aún no has guardado productos en la aplicación! <br> Crea algunos productos primero para poder visualizarlos.</p>
+        </div>
+        <div class="modal-footer">
+            <div class="row center-align">
+                <button class="btn waves-effect waves-light" type="button" id="closeModal">Ok, vamos!
+                    <i class="material-icons right">arrow_forward</i>
+                </button>
+            </div>
+        </div>
+    </div>
+      
     <script type="module" src="assets/js/listar.js"></script>
 </body>
 </html>

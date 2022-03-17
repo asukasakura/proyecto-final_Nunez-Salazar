@@ -28,8 +28,15 @@ let clasificacion = document.querySelectorAll(".estrellas");
 
 let id = 0;
 
+let productosList = JSON.parse(localStorage.getItem('productos')) || [];
+let toastSuccess = "<span class='material-icons'>favorite</span> &nbsp; Producto creado";
+let elems = document.querySelectorAll('.modal');
+let instances = M.Modal.init(elems);
+let singleModalElem = document.querySelector('#modal1');
+let instance = M.Modal.getInstance(singleModalElem);
 
 function obtenerValRadio(el){
+  let val = 0
   for(i = 0; i < el.length; i++) {
     if(el[i].checked)
     val = el[i].value;
@@ -39,28 +46,29 @@ function obtenerValRadio(el){
 
 for(var i = 0, max = radios.length; i < max; i++) {
   radios[i].onclick = function() {
-    if(this.value == 'true'){
-      isOpen.classList.add('isOpen')
-    }else{
-      isOpen.classList.remove('isOpen')
-    }
+    this.value == 'true' ? isOpen.classList.add('isOpen') : isOpen.classList.remove('isOpen');
   }
 }
 
 function addProduct(e){
   e.preventDefault(e);
-  let productosList = JSON.parse(localStorage.getItem('productos')) || [];
-  let productos = new Producto(id ,nombreProducto.value, categoriaProducto.value, marcaProducto.value, fechaCaducidad.value, fechaApertura.value , paoProducto.value, obtenerValRadio(clasificacion), notasProducto.value);
-  productosList.push(productos);
-  localStorage.setItem('productos', JSON.stringify(productosList))
- 
-  formulario.reset();
-  id++;
+  // Valido si el producto tiene al menos nombre y guardo
+  if( nombreProducto.value != null && nombreProducto.value != '' && fechaCaducidad.value != '' ){
+    let productos = new Producto(id ,nombreProducto.value, categoriaProducto.value, marcaProducto.value, fechaCaducidad.value, fechaApertura.value , paoProducto.value, obtenerValRadio(clasificacion), notasProducto.value);
+    productosList.push(productos);
+    localStorage.setItem('productos', JSON.stringify(productosList))
+  
+    formulario.reset();
+    M.toast({html: toastSuccess, classes: 'teal lighten-1'});
+    id++;
+  } else { 
+    instance.open();
+  }
 }
 
 formulario.addEventListener("submit", addProduct)
-formulario.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-    addProduct;
-  }
-});
+// formulario.addEventListener("keyup", function(event) {
+//   if (event.keyCode === 13) {
+//     addProduct;
+//   }
+// });

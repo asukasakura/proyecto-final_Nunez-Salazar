@@ -69,16 +69,17 @@ export function renderProductos(arrProductos,container){
     }
     
     let thispao = pao(producto.fecha_apertura, producto.pao);
-    let siEstaVencido = dateInPast(thispao, fechaActual);
+    let siEstaVencidoPAO = dateInPast(thispao, fechaActual);
     let caduce = new Date(producto.fecha_caducidad);
+    let siEstaVencidoFecha = dateInPast(caduce, fechaActual);
     let dangerText = '';
     let caducidad  = '';
     
-    if (producto.apertura == false){
+    if (producto.apertura == false && siEstaVencidoFecha == false){
       caduce = caduce.toLocaleDateString('es-ES', optionDates);
       caducidad = `<h6>${caduce.split(' ')[3].toUpperCase()}</h6>
                       <span>${caduce.split(' ')[5]}</span>`;
-    }else if(siEstaVencido == true){
+    }else if(siEstaVencidoPAO == true || siEstaVencidoFecha == true){
       caduce = caduce.toLocaleDateString('es-ES', optionDates);
       caducidad = `<h6 class="red-text text-darken-2"><b>${caduce.split(' ')[3].toUpperCase()}</b></h6>
       <span class="red-text text-darken-2"><b>${caduce.split(' ')[5]}</b></span>`;
