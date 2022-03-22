@@ -1,6 +1,7 @@
 class Producto{
-  constructor( id, nombre, categoria, marca, fecha_caducidad, fecha_apertura, pao, clasificacion, notas ){
+  constructor( id, image, nombre, categoria, marca, fecha_caducidad, fecha_apertura, pao, clasificacion, notas ){
     this.id = id;
+    this.image = image;
     this.nombre = nombre;
     this.categoria = categoria;
     this.marca = marca;
@@ -54,7 +55,7 @@ function addProduct(e){
   e.preventDefault(e);
   // Valido si el producto tiene al menos nombre y guardo
   if( nombreProducto.value != null && nombreProducto.value != '' && fechaCaducidad.value != '' ){
-    let productos = new Producto(id ,nombreProducto.value, categoriaProducto.value, marcaProducto.value, fechaCaducidad.value, fechaApertura.value , paoProducto.value, obtenerValRadio(clasificacion), notasProducto.value);
+    let productos = new Producto(id , '', nombreProducto.value, categoriaProducto.value, marcaProducto.value, fechaCaducidad.value, fechaApertura.value , paoProducto.value, obtenerValRadio(clasificacion), notasProducto.value);
     productosList.push(productos);
     localStorage.setItem('productos', JSON.stringify(productosList))
   

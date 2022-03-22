@@ -50,3 +50,4 @@ formulario.addEventListener("keyup", function(event) {
     buscarfx;
   }
 });
+

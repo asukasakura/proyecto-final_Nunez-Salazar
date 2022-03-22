@@ -1,6 +1,7 @@
 export class ProductoStoraged{
   constructor( obj ){
     this.id = obj.id;
+    this.image = obj.image;
     this.nombre = obj.nombre;
     this.categoria = obj.categoria;
     this.marca = obj.marca;
@@ -51,6 +52,14 @@ export function dateInPast(firstDate, secondDate) {
   return false;
 };
 
+let stars = (calificacion) => {
+  let icons = '';
+  for(let i = 0; calificacion > i ; i++){
+    icons += '<i class="red-text text-lighten-2 material-icons">star</i>';
+  }
+  return icons;
+}
+
 export function renderProductos(arrProductos,container){
 
   let cards = '';
@@ -60,13 +69,8 @@ export function renderProductos(arrProductos,container){
   let nuevoDiv = document.createElement('div');
   
   for (const producto of arrProductos){
-    let stars = (calificacion) => {
-      let icons = '';
-      for(let i = 0; calificacion > i ; i++){
-        icons += '<i class="red-text text-lighten-2 material-icons">star</i>';
-      }
-      return icons;
-    }
+    let imageProd = '';
+    producto.image != '' ? imageProd = 'productos/' + producto.image : imageProd = 'logo-beany.png';
     
     let thispao = pao(producto.fecha_apertura, producto.pao);
     let siEstaVencidoPAO = dateInPast(thispao, fechaActual);
@@ -93,13 +97,13 @@ export function renderProductos(arrProductos,container){
 
     cards += `<div class="card horizontal">
           <div class="card-image">
-              <img src="assets/images/logo-beany.png" alt="Beany | Skin care" class="" height="50">
+              <img src="assets/images/${imageProd}" alt="Beany | Skin care" class="" height="120">
           </div>
           <div class="card-stacked">
               <div class="card-content">
                   <div class="col s8">
-                      <h4 class="margin top-0 bottom-0 ${dangerText}"> ${producto.nombre} </h4>
-                      <p> ${producto.marca} </p>
+                      <h4 class="left-align margin top-0 bottom-0 ${dangerText}"> ${producto.nombre} </h4>
+                      <p class="left-align"> ${producto.marca} </p>
                   </div>
                   <div class="col s4 right-align">
                     <small>VENC</small>
@@ -107,12 +111,45 @@ export function renderProductos(arrProductos,container){
                   </div>
               </div>
               <div class="card-action">
-                  <div class="col s6"><span> ${producto.categoria} </span></div>
+                  <div class="col s6 left-align"><span> ${producto.categoria} </span></div>
                   <div class="col s6 right-align"> ${stars(producto.calificacion)} </div>
           </div>
       </div>
       </div>`;
   //inserto el contenido en el contenedor vacío
+  container.innerHTML = cards;
+  }
+  container.append(nuevoDiv)
+}
+
+export function renderProductosAPI(arrProductos,container){
+
+  let cards = '';
+  let nuevoDiv = document.createElement('div');
+  
+  for (const producto of arrProductos){
+    
+    cards += `<div class="card horizontal">
+          <div class="card-image">
+              <img src="${producto.api_featured_image}" alt="Beany | Skin care" class="" height="120">
+          </div>
+          <div class="card-stacked">
+              <div class="card-content">
+                  <div class="col s8">
+                      <h4 class="left-align margin top-0 bottom-0"> ${producto.name} </h4>
+                      <p class="left-align"> ${producto.brand} </p>
+                  </div>
+                  <div class="col s4 right-align">
+                    <small>VENC</small>
+                    
+                  </div>
+              </div>
+              <div class="card-action">
+                  <div class="col s6 left-align"><span> ${producto.category} </span></div>
+                  <div class="col s6 right-align"> ${stars(producto.rating)} </div>
+          </div>
+      </div>
+      </div>`;
   container.innerHTML = cards;
   }
   container.append(nuevoDiv)

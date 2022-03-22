@@ -1,0 +1,80 @@
+[
+  {
+    "id" : 1,
+    "image" : "all-in-one-snail-repair-cream.jpeg",
+    "nombre" : "Snail repair",
+    "categoria" : "Crema día",
+    "marca" : "Mizon",
+    "fecha_caducidad" : "02-12-2025",
+    "apertura" : false,
+    "fecha_apertura" : "01-01-2021",
+    "pao" : "3",
+    "calificacion" : 3,
+    "notas" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in laboriosam iure magnam accusantium repudiandae minima, cumque illum quisquam ipsum earum provident velit est. Quibusdam dolor consectetur non officiis praesentium."
+  },
+  {
+    "id" : 2,
+    "image" : "beautycita-Tonico-IsnTree-Plus.jpeg",
+    "nombre" : "Hialuronic Acid Toner",
+    "categoria" : "Toner",
+    "marca" : "Isnt tree",
+    "fecha_caducidad" : "02-12-2025",
+    "apertura" : false,
+    "fecha_apertura" : "01-01-2021",
+    "pao" : "3",
+    "calificacion" : 2,
+    "notas" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in laboriosam iure magnam accusantium repudiandae minima, cumque illum quisquam ipsum earum provident velit est. Quibusdam dolor consectetur non officiis praesentium."
+  },
+  {
+    "id" : 3,
+    "image" : "Neogen-Real-Vita-C-Serum.jpeg",
+    "nombre" : "Real Vita C Serum",
+    "categoria" : "Serum",
+    "marca" : "Neogen",
+    "fecha_caducidad" : "02-12-2025",
+    "apertura" : false,
+    "fecha_apertura" : "01-01-2021",
+    "pao" : "3",
+    "calificacion" : 3,
+    "notas" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in laboriosam iure magnam accusantium repudiandae minima, cumque illum quisquam ipsum earum provident velit est. Quibusdam dolor consectetur non officiis praesentium."
+  },
+  {
+    "id" : 4,
+    "image" : "7940999_1.jpeg",
+    "nombre" : "Protector Solar Facial con Color Athelios Shaka",
+    "categoria" : "Protector solar",
+    "marca" : "La Roche Posei",
+    "fecha_caducidad" : "02-12-2025",
+    "apertura" : false,
+    "fecha_apertura" : "01-01-2021",
+    "pao" : "3",
+    "calificacion" : 5,
+    "notas" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in laboriosam iure magnam accusantium repudiandae minima, cumque illum quisquam ipsum earum provident velit est. Quibusdam dolor consectetur non officiis praesentium."
+  },
+  {
+    "id" : 5,
+    "image" : "s-l300.jpeg",
+    "nombre" : "Innisfree Canola Honey Lip Balm",
+    "categoria" : "Bálsamo labial",
+    "marca" : "Innisfree",
+    "fecha_caducidad" : "02-12-2025",
+    "apertura" : false,
+    "fecha_apertura" : "01-01-2021",
+    "pao" : "3",
+    "calificacion" : 1,
+    "notas" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in laboriosam iure magnam accusantium repudiandae minima, cumque illum quisquam ipsum earum provident velit est. Quibusdam dolor consectetur non officiis praesentium."
+  },
+  {
+    "id" : 6,
+    "image" : "Advanced-Snail-Peptide-Eye-Cream.jpg",
+    "nombre" : "Advanced Snail Peptide Eye Cream",
+    "categoria" : "Contorno de ojos",
+    "marca" : "COSRX",
+    "fecha_caducidad" : "02-12-2025",
+    "apertura" : false,
+    "fecha_apertura" : "01-01-2021",
+    "pao" : "3",
+    "calificacion" : 0,
+    "notas" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in laboriosam iure magnam accusantium repudiandae minima, cumque illum quisquam ipsum earum provident velit est. Quibusdam dolor consectetur non officiis praesentium."
+  }
+]
