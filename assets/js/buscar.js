@@ -32,7 +32,7 @@ if( localStorage.length != 0 ){
 
 }
 
-function buscarfx(e){
+const buscarfx = (e) => {
   e.preventDefault(e);
   let buscar = document.querySelector('#search').value;
   if(buscar != ''){

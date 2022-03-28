@@ -7,10 +7,11 @@ let productosNews = []
 let container = document.querySelector("#cards");
 let containerAPI = document.querySelector("#apis");
 const loader = document.querySelector("#loading");
-function displayLoading() {
+
+const displayLoading = () => {
   loader.classList.add("display");
 }
-function hideLoading() {
+const hideLoading = () => {
   loader.classList.remove("display");
 }
 
@@ -27,24 +28,21 @@ fetch('./assets/js/data_base.json')
   })
   .catch( (error) => {
     renderProductos( productosNews, container );
-    console.log('Error: no se cargó json');
-    console.log(error);
+    console.log('Error: no se cargó json', error);
   })
 
 /* PRODUCTOS LLAMADOS POR API */
 let url = "http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=vegan"  
-function fetchHandler() {
+const fetchHandler = () => {
   displayLoading()
   fetch(url)
     .then(response => response.json())
     .then(json => {
       hideLoading();
       renderProductosAPI(json, containerAPI);
-      console.log(json);
     })
     .catch( (error) => {
-      console.log('Error: no se cargó json');
-      console.log(error);
+      console.log('Error: no se cargó json', error);
       hideLoading();
     })
 }

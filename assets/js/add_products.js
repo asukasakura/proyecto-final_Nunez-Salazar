@@ -16,6 +16,7 @@ class Producto{
 
 let formulario = document.querySelector("#add_products");
 let nombreProducto =  document.querySelector('#nombre_producto');
+let imagenProducto =  document.querySelector('#imagen_producto');
 let categoriaProducto =  document.querySelector('#categoria');
 let marcaProducto =  document.querySelector('#marca');
 let checkApertura =  document.querySelector('.estado_apertura');
@@ -36,8 +37,8 @@ let instances = M.Modal.init(elems);
 let singleModalElem = document.querySelector('#modal1');
 let instance = M.Modal.getInstance(singleModalElem);
 
-function obtenerValRadio(el){
-  let val = 0
+const obtenerValRadio = (el) => {
+  let val = 0;
   for(i = 0; i < el.length; i++) {
     if(el[i].checked)
     val = el[i].value;
@@ -51,11 +52,11 @@ for(var i = 0, max = radios.length; i < max; i++) {
   }
 }
 
-function addProduct(e){
+const addProduct = (e) => {
   e.preventDefault(e);
   // Valido si el producto tiene al menos nombre y guardo
   if( nombreProducto.value != null && nombreProducto.value != '' && fechaCaducidad.value != '' ){
-    let productos = new Producto(id , '', nombreProducto.value, categoriaProducto.value, marcaProducto.value, fechaCaducidad.value, fechaApertura.value , paoProducto.value, obtenerValRadio(clasificacion), notasProducto.value);
+    let productos = new Producto(id, imagenProducto.value, nombreProducto.value, categoriaProducto.value, marcaProducto.value, fechaCaducidad.value, fechaApertura.value , paoProducto.value, obtenerValRadio(clasificacion), notasProducto.value);
     productosList.push(productos);
     localStorage.setItem('productos', JSON.stringify(productosList))
   
@@ -68,8 +69,3 @@ function addProduct(e){
 }
 
 formulario.addEventListener("submit", addProduct)
-// formulario.addEventListener("keyup", function(event) {
-//   if (event.keyCode === 13) {
-//     addProduct;
-//   }
-// });
